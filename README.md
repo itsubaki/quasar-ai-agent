@@ -2,7 +2,7 @@
 
  * quasar Agent using the Agent Development Kit
 
-[Factoring](factoring.png)
+![factoring](factoring.png)
 
 ```shell
 adk web
