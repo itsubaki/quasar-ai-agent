@@ -1,6 +1,6 @@
 # quasar-agent
 
- * quasar Agent using Agent Development Kit
+ * quasar Agent using the Agent Development Kit
 
 [Factoring](factoring.png)
 
