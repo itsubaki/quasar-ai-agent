@@ -2,10 +2,6 @@
 
  * quasar Agent using the Agent Development Kit
 
-```shell
-adk web
-```
-
 ![factoring](factoring.png)
 
 
@@ -16,9 +12,10 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install google-adk
 gcloud auth application-default login
+adk web
 ```
 
-## Environment
+## Environments
 
 ```
 # agent/.env
