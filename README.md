@@ -2,11 +2,12 @@
 
  * quasar Agent using the Agent Development Kit
 
-![factoring](factoring.png)
-
 ```shell
 adk web
 ```
+
+![factoring](factoring.png)
+
 
 ## Installation
 
