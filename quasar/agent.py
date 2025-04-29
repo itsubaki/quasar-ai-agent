@@ -30,10 +30,7 @@ async def create_agent():
         model="gemini-2.0-flash",
         description=("Agent to answer questions about the Quantum Computation and Quantum Information."),
         instruction=("You are a helpful agent who can answer user questions about the Quantum Computation and Quantum Information."),
-        tools=[
-            *quasar_tools,
-            # other tools can be added here
-        ],
+        tools=quasar_tools,
     )
 
     return agent, exit_stack
