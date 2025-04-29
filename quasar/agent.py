@@ -1,5 +1,5 @@
 from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset, StdioServerParameters
-from google.adk.agents.llm_agent import LlmAgent
+from google.adk.agents.llm_agent import Agent
 from dotenv import load_dotenv
 import os
 
@@ -21,7 +21,7 @@ async def get_tools():
 
 async def create_agent():
     tools, exit_stack = await get_tools()
-    agent = LlmAgent(
+    agent = Agent(
         name="quasar_agent",
         model="gemini-2.0-flash",
         description=("Agent to answer questions about the Quantum Computation and Quantum Information."),
