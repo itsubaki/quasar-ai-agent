@@ -1,24 +1,16 @@
 # quasar-agent
 
- * quasar Agent using the Agent Development Kit
+ * quasar Agent using the [Agent Development Kit](https://google.github.io/adk-docs/)
 
 ![factoring](factoring.png)
 
+## Installation and Environments
 
-## Installation
-
-```shell
-python3 -m venv .venv
-source .venv/bin/activate
-pip install google-adk
-gcloud auth application-default login
-adk web
-```
-
-## Environments
+ 1. Deploy [quasar](https://github.com/itsubaki/quasar) to Cloud Run.
+ 1. Install the [quasar-mcp-server](https://github.com/itsubaki/quasar-mcp-server).
 
 ```
-# agent/.env
+# quasar/.env
 GOOGLE_GENAI_USE_VERTEXAI=TRUE
 GOOGLE_CLOUD_PROJECT=YOUR_PROJECT_ID
 GOOGLE_CLOUD_LOCATION=us-central1
@@ -27,6 +19,13 @@ BASE_URL=https://CLOUD_RUN_URL.a.run.app
 GCLOUD_PATH=/google-cloud-sdk/bin/gcloud
 ```
 
-## Links
+```shell
+python3 -m venv .venv
+source .venv/bin/activate
+pip install google-adk
+gcloud auth application-default login
+```
 
- * [Agent Development Kit](https://google.github.io/adk-docs/)
+```shell
+adk web
+```
