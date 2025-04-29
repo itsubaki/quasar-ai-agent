@@ -1,5 +1,6 @@
 from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset, StdioServerParameters
 from google.adk.agents.llm_agent import Agent
+from google.adk.tools import google_search, agent_tool
 from contextlib import AsyncExitStack
 from zoneinfo import ZoneInfo
 from dotenv import load_dotenv
@@ -36,17 +37,34 @@ async def create_agent():
     exit_stack = AsyncExitStack()
     quasar_tools = await get_quasar_tools(exit_stack)
 
-    agent = Agent(
+    search_agent = Agent(
+        name='search_agent',
+        model='gemini-2.0-flash',
+        description=("Agent to answer questions using Google Search."),
+        instruction=("You are a specialist in Google Search"),
+        tools=[google_search],
+    )
+
+    quasar_agent = Agent(
         name="quasar_agent",
         model="gemini-2.0-flash",
         description=("Agent to answer questions about the Quantum Computation and Quantum Information."),
         instruction=("You are a helpful agent who can answer user questions about the Quantum Computation and Quantum Information."),
+        tools=[*quasar_tools],
+    )
+
+    root_agent = Agent(
+        name="root_agent",
+        model="gemini-2.0-flash",
+        description=("Agent to answer questions about the Quantum Computation and Quantum Information."),
+        instruction=("You are a helpful agent who can answer user questions about the Quantum Computation and Quantum Information."),
         tools=[
-            *quasar_tools,
+            agent_tool.AgentTool(agent=quasar_agent),
+            agent_tool.AgentTool(agent=search_agent),
             get_current_time,
         ],
     )
 
-    return agent, exit_stack
+    return root_agent, exit_stack
 
 root_agent = create_agent()
