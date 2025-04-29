@@ -1,12 +1,13 @@
 from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset, StdioServerParameters
 from google.adk.agents.llm_agent import Agent
+from contextlib import AsyncExitStack
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 
-async def get_quasar_tools():
-    tools, exit_stack = await MCPToolset.from_server(
+async def get_quasar_tools(exit_stack):
+    tools, _ = await MCPToolset.from_server(
         connection_params=StdioServerParameters(
             command=os.getenv("COMMAND"),
             args=[],
@@ -14,13 +15,16 @@ async def get_quasar_tools():
                 "BASE_URL": os.getenv("BASE_URL"),
                 "GCLOUD_PATH": os.getenv("GCLOUD_PATH"),
             },
+            async_exit_stack=exit_stack,
         ),
     )
 
-    return tools, exit_stack
+    return tools
 
 async def create_agent():
-    quasar_tools, exit_stack = await get_quasar_tools()
+    exit_stack = AsyncExitStack()
+    quasar_tools = await get_quasar_tools(exit_stack)
+
     agent = Agent(
         name="quasar_agent",
         model="gemini-2.0-flash",
