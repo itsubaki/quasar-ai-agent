@@ -1,6 +1,6 @@
 # quasar-agent
 
- * quasar Agent using the [Agent Development Kit](https://google.github.io/adk-docs/)
+ * quasar AI Agent using the [Agent Development Kit](https://google.github.io/adk-docs/)
 
 ![factoring](factoring.png)
 
