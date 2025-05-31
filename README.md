@@ -1,4 +1,4 @@
-# quasar-agent
+# quasar-ai-agent
 
  * quasar AI Agent using the [Agent Development Kit](https://google.github.io/adk-docs/)
 
