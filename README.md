@@ -7,25 +7,25 @@
 ## Installation and Environments
 
  1. Deploy [quasar](https://github.com/itsubaki/quasar) to Cloud Run.
- 1. Install the [quasar-mcp-server](https://github.com/itsubaki/quasar-mcp-server).
+ 1. Deploy [quasar-mcp-server](https://github.com/itsubaki/quasar-mcp-server) to Cloud Run.
 
-```
+```shell
 # quasar/.env
 GOOGLE_GENAI_USE_VERTEXAI=TRUE
 GOOGLE_CLOUD_PROJECT=YOUR_PROJECT_ID
 GOOGLE_CLOUD_LOCATION=us-central1
-COMMAND=/go/bin/quasar-mcp-server
-BASE_URL=https://CLOUD_RUN_URL.a.run.app
-GCLOUD_PATH=/google-cloud-sdk/bin/gcloud
 ```
 
 ```shell
-python3 -m venv .venv
-source .venv/bin/activate
-pip install google-adk
-gcloud auth application-default login
+$ python3 -m venv .venv
+$ source .venv/bin/activate
+$ pip install google-adk
 ```
 
 ```shell
-adk web
+$ gcloud run services proxy quasar-mcp-server --region asia-northeast1 --port=3000
+```
+
+```shell
+$ adk web
 ```
