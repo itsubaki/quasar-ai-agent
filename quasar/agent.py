@@ -17,7 +17,7 @@ def create_agent():
     quasar_agent = Agent(
         name="quasar",
         model="gemini-2.0-flash",
-        description=("Agent to answer questions about the Quantum Computation and Quantum Information."),
+        description=("Answers user questions about the Quantum Computation and Quantum Information."),
         instruction=("You are a helpful agent who can answer user questions about the Quantum Computation and Quantum Information."),
         tools=[
             MCPToolset(
@@ -31,7 +31,7 @@ def create_agent():
     search_agent = Agent(
         name='google_search',
         model='gemini-2.0-flash',
-        description=("Agent to answer questions using Google Search."),
+        description=("Answers user questions using Google Search."),
         instruction=("You are a specialist in Google Search"),
         tools=[google_search],
     )
@@ -39,8 +39,8 @@ def create_agent():
     root_agent = Agent(
         name="root",
         model="gemini-2.0-flash",
-        description=("Agent to answer questions about the Quantum Computation and Quantum Information."),
-        instruction=("You are a helpful agent who can answer user questions about the Quantum Computation and Quantum Information."),
+        description=("Answers user questions about everything."),
+        instruction=("You are a helpful agent who can answer user questions."),
         tools=[
             agent_tool.AgentTool(agent=quasar_agent),
             agent_tool.AgentTool(agent=search_agent),

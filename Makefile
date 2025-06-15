@@ -11,6 +11,9 @@ install:
 	source .venv/bin/activate
 	pip install google-adk
 
+update:
+	pip install --upgrade google-adk
+
 web:
 	adk web
 
