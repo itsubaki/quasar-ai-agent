@@ -23,9 +23,5 @@ $ pip install google-adk
 ```
 
 ```shell
-$ gcloud run services proxy quasar-mcp-server --region asia-northeast1 --port=3000
-```
-
-```shell
 $ adk web
 ```
