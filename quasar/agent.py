@@ -23,7 +23,11 @@ def create_agent():
             MCPToolset(
                 connection_params=StreamableHTTPConnectionParams(
                     url="http://127.0.0.1:3000/mcp",
-                )
+                ),
+                tool_filter=[
+                    'factorize',
+                    'openqasm3p0_run',
+                ]
             )
         ],
     )
@@ -33,7 +37,9 @@ def create_agent():
         model='gemini-2.0-flash',
         description=("Answers user questions using Google Search."),
         instruction=("You are a specialist in Google Search"),
-        tools=[google_search],
+        tools=[
+            google_search,
+        ],
     )
 
     root_agent = Agent(
@@ -41,11 +47,13 @@ def create_agent():
         model="gemini-2.0-flash",
         description=("Answers user questions about everything."),
         instruction=("You are a helpful agent who can answer user questions."),
-        tools=[
-            agent_tool.AgentTool(agent=quasar_agent),
-            agent_tool.AgentTool(agent=search_agent),
-            get_current_time,
+        sub_agents=[
+            quasar_agent,
+            search_agent,
         ],
+        tools=[
+            get_current_time,
+        ]
     )
 
     return root_agent
