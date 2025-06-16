@@ -22,3 +22,6 @@ deploy:
 
 proxy:
 	gcloud run services proxy ${SERVICE_NAME} --region ${REGION} --port=3001
+
+proxy-mcp:
+	gcloud run services proxy quasar-mcp-server --region ${REGION} --port=3000

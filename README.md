@@ -23,5 +23,9 @@ $ pip install google-adk
 ```
 
 ```shell
+$ make proxy-mcp
+```
+
+```shell
 $ adk web
 ```
