@@ -2,7 +2,7 @@
 
  * quasar AI Agent using the [Agent Development Kit](https://google.github.io/adk-docs/)
 
-![factoring](factoring.png)
+![factorize](factorize.png)
 
 ## Installation and Environments
 
