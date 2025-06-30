@@ -17,15 +17,15 @@ GOOGLE_CLOUD_LOCATION=us-central1
 ```
 
 ```shell
-$ python3 -m venv .venv
-$ source .venv/bin/activate
-$ pip install google-adk
+python3 -m venv .venv
+source .venv/bin/activate
+pip install google-adk
 ```
 
 ```shell
-$ make proxy-mcp
+make proxy-mcp
 ```
 
 ```shell
-$ adk web
+adk web
 ```
