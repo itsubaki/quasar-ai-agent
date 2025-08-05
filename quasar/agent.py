@@ -25,7 +25,6 @@ def create_agent():
                     url="http://127.0.0.1:3000/mcp",
                 ),
                 tool_filter=[
-                    'factorize',
                     'openqasm3p0_run',
                 ]
             )

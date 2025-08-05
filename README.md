@@ -2,8 +2,6 @@
 
  * quasar AI Agent using the [Agent Development Kit](https://google.github.io/adk-docs/)
 
-![factorize](factorize.png)
-
 ## Installation and Environments
 
  1. Deploy [quasar](https://github.com/itsubaki/quasar) to Cloud Run.
