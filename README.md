@@ -2,8 +2,6 @@
 
  * quasar AI Agent using the [Agent Development Kit](https://google.github.io/adk-docs/)
 
-![factoring](factoring.png)
-
 ## Installation and Environments
 
  1. Deploy [quasar](https://github.com/itsubaki/quasar) to Cloud Run.
@@ -17,15 +15,15 @@ GOOGLE_CLOUD_LOCATION=us-central1
 ```
 
 ```shell
-$ python3 -m venv .venv
-$ source .venv/bin/activate
-$ pip install google-adk
+python3 -m venv .venv
+source .venv/bin/activate
+pip install google-adk
 ```
 
 ```shell
-$ make proxy-mcp
+make proxy-mcp
 ```
 
 ```shell
-$ adk web
+adk web
 ```
