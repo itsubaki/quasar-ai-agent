@@ -1,6 +1,6 @@
 # quasar-ai-agent
 
- * quasar AI Agent using the [Agent Development Kit](https://google.github.io/adk-docs/)
+ * quasar AI agent using the [Agent Development Kit](https://google.github.io/adk-docs/)
 
 ## Installation and Environments
 
