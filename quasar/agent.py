@@ -16,7 +16,7 @@ def get_current_time(city: str, time_zone_id: str) -> dict:
 def create_agent():
     quasar_agent = Agent(
         name="quasar_agent",
-        model="gemini-2.0-flash",
+        model="gemini-2.5-flash",
         description=("Answers user questions about the Quantum Computation and Quantum Information."),
         instruction=("You are a helpful agent who can answer user questions about the Quantum Computation and Quantum Information."),
         tools=[
@@ -25,7 +25,6 @@ def create_agent():
                     url="http://127.0.0.1:3000/mcp",
                 ),
                 tool_filter=[
-                    'factorize',
                     'openqasm3p0_run',
                 ]
             )
@@ -34,7 +33,7 @@ def create_agent():
 
     search_agent = Agent(
         name='google_search_agent',
-        model='gemini-2.0-flash',
+        model='gemini-2.5-flash',
         description=("Answers user questions using Google Search."),
         instruction=("You are a specialist in Google Search"),
         tools=[
@@ -44,7 +43,7 @@ def create_agent():
 
     root_agent = Agent(
         name="root_agent",
-        model="gemini-2.0-flash",
+        model="gemini-2.5-flash",
         description=("Answers user questions about everything."),
         instruction=("You are a helpful agent who can answer user questions."),
         sub_agents=[
