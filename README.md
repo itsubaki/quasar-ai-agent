@@ -21,7 +21,7 @@ User  ->
 # .env
 export GOOGLE_GENAI_USE_VERTEXAI=TRUE
 export GOOGLE_CLOUD_PROJECT=YOUR_PROJECT
-export GOOGLE_CLOUD_LOCATION=us-central1
+export GOOGLE_CLOUD_LOCATION=asia-northeast1
 ```
 
 ```shell
