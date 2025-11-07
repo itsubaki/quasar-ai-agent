@@ -6,7 +6,6 @@
 
 ```
 $ go run main.go 
-
 User  -> Please list tools
 Agent -> I can run a quantum circuit using OpenQASM 3.0. This tool is called `openqasm3p0_run`.
 User  -> 
