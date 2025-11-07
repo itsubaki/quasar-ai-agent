@@ -18,5 +18,12 @@ User  ->
  1. Deploy [quasar-mcp-server](https://github.com/itsubaki/quasar-mcp-server) to Cloud Run.
 
 ```shell
+# .env
+export GOOGLE_GENAI_USE_VERTEXAI=TRUE
+export GOOGLE_CLOUD_PROJECT=YOUR_PROJECT
+export GOOGLE_CLOUD_LOCATION=us-central1
+```
+
+```shell
 make proxy-mcp
 ```
