@@ -1,29 +1,23 @@
 # quasar-ai-agent
 
- * quasar AI agent using the [Agent Development Kit](https://google.github.io/adk-docs/)
+- quasar AI agent using the [google/adk-go](https://github.com/google/adk-go)
+
+## Examples
+
+```
+$ go run main.go 
+
+User  -> Please list tools
+Agent -> I can run a quantum circuit using OpenQASM 3.0. This tool is called `openqasm3p0_run`.
+User  -> 
+```
 
 ## Installation and Environments
 
+ 1. Install the [gcloud CLI](https://docs.cloud.google.com/sdk/docs/install)
  1. Deploy [quasar](https://github.com/itsubaki/quasar) to Cloud Run.
  1. Deploy [quasar-mcp-server](https://github.com/itsubaki/quasar-mcp-server) to Cloud Run.
 
 ```shell
-# quasar/.env
-GOOGLE_GENAI_USE_VERTEXAI=TRUE
-GOOGLE_CLOUD_PROJECT=YOUR_PROJECT_ID
-GOOGLE_CLOUD_LOCATION=us-central1
-```
-
-```shell
-python3 -m venv .venv
-source .venv/bin/activate
-pip install google-adk
-```
-
-```shell
 make proxy-mcp
-```
-
-```shell
-adk web
 ```

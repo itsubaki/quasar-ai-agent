@@ -6,22 +6,18 @@ PROJECT_ID := $(shell gcloud config get-value project)
 IMAGE := ${REGION}-docker.pkg.dev/${PROJECT_ID}/${SERVICE_NAME}/app
 TAG := latest
 
-install:
-	python3 -m venv .venv
-	source .venv/bin/activate
-	pip install google-adk
-
 update:
-	pip install --upgrade google-adk
+	go get -u
+	go mod tidy
 
-web:
-	adk web
+run:
+	go run main.go
 
-deploy:
-	adk deploy cloud_run --project=${PROJECT_ID} --region=${REGION} --service_name=${SERVICE_NAME} --with_ui ./quasar
+webui:
+	go run main.go web api webui
 
-proxy:
-	gcloud run services proxy ${SERVICE_NAME} --region ${REGION} --port=3001
+login:
+	gcloud auth application-default login
 
 proxy-mcp:
 	gcloud run services proxy quasar-mcp-server --region ${REGION} --port=3000
