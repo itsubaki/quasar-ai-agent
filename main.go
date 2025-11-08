@@ -15,11 +15,17 @@ import (
 	"google.golang.org/genai"
 )
 
+var (
+	projectID = os.Getenv("GOOGLE_CLOUD_PROJECT")
+	location  = os.Getenv("GOOGLE_CLOUD_LOCATION")
+	endpoint  = os.Getenv("QUASAR_MCP_ENDPOINT")
+)
+
 func main() {
 	ctx := context.Background()
 	model, err := gemini.NewModel(ctx, "gemini-2.5-flash", &genai.ClientConfig{
-		Project:  os.Getenv("GOOGLE_CLOUD_PROJECT"),
-		Location: os.Getenv("GOOGLE_CLOUD_LOCATION"),
+		Project:  projectID,
+		Location: location,
 	})
 	if err != nil {
 		panic(err)
@@ -27,7 +33,7 @@ func main() {
 
 	toolset, err := mcptoolset.New(mcptoolset.Config{
 		Transport: &mcp.StreamableClientTransport{
-			Endpoint: "http://127.0.0.1:3000/mcp",
+			Endpoint: endpoint,
 		},
 	})
 	if err != nil {
