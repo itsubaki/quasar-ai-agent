@@ -1,6 +1,6 @@
 # quasar-ai-agent
 
-- quasar AI agent using the [google/adk-go](https://github.com/google/adk-go)
+- A quasar AI agent using [google/adk-go](https://github.com/google/adk-go)
 
 ## Examples
 
