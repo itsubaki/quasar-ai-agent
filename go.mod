@@ -3,7 +3,7 @@ module github.com/itsubaki/quasar-ai-agent
 go 1.24.5
 
 require (
-	github.com/modelcontextprotocol/go-sdk v1.1.0
+	github.com/modelcontextprotocol/go-sdk v1.2.0
 	google.golang.org/adk v0.1.0
 	google.golang.org/genai v1.34.0
 )
