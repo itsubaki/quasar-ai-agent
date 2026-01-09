@@ -1,7 +1,6 @@
 # quasar-ai-agent
 
-- A quasar AI agent using [google/adk-go](https://github.com/google/adk-go).
-- A professional in quantum computing and quantum information, able to run OpenQASM 3.x code.
+- A quasar AI agent using [google/adk-go](https://github.com/google/adk-go) that acts as a professional in quantum computation and quantum information and is able to run OpenQASM 3.x code.
 
 ## Examples
 
