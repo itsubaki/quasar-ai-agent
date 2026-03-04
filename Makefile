@@ -6,6 +6,10 @@ PROJECT_ID := $(shell gcloud config get-value project)
 IMAGE := ${REGION}-docker.pkg.dev/${PROJECT_ID}/${SERVICE_NAME}/app
 TAG := latest
 
+test:
+	go test -cover $(shell go list ./... | grep -v /cmd/ ) -v -coverprofile=coverage.txt -covermode=atomic
+	go tool cover -html=coverage.txt -o coverage.html
+
 update:
 	go get -u
 	go mod tidy

@@ -24,3 +24,5 @@ go.work
 *.tar.gz
 google-cloud-sdk
 .env
+coverage.txt
+coverage.html
