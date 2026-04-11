@@ -7,7 +7,7 @@
 ```shell
 $ go run main.go 
 User  -> Please list tools
-Agent -> I can run a quantum circuit using OpenQASM 3.0. This tool is called `openqasm_run`.
+Agent -> I can run a quantum circuit using OpenQASM. This tool is called `openqasm_run`.
 User  -> 
 ```
 
