@@ -7,7 +7,7 @@ A quasar AI agent that is an expert in quantum computation and quantum informati
 ```shell
 $ go run main.go 
 User  -> Please list tools
-Agent -> I can run a quantum circuit using OpenQASM. This tool is called `openqasm_run`.
+Agent -> I can run a quantum circuit using OpenQASM. This tool is called `openqasm_simulate`.
 User  -> 
 ```
 
