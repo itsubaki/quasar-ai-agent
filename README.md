@@ -1,6 +1,6 @@
 # quasar-ai-agent
 
-A quasar AI agent that is an expert in quantum computation and quantum information, capable of running OpenQASM code.
+An AI agent that is an expert in quantum computation and quantum information, capable of running OpenQASM code.
 
 ## Examples
 
